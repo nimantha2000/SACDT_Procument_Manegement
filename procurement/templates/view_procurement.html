@@ -1,7 +1,12 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
 <head>
     <title>View Procurement</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+
+    
+
 </head>
 <body>
     <h1>{{ procurement.name }}</h1>
@@ -9,9 +14,9 @@
     <h2>Steps</h2>
     <ul>
         {% for step in steps %}
-        <li>Step {{ step.step_number }}: <a href="{{ step.file.url }}">Download</a></li>
+        <li>{{ step.name }}: <a href="{{ step.file.url }}">Download</a></li>
         {% endfor %}
     </ul>
-    <a href="{% url 'continue_step' procurement.id procurement.current_step|add:1 %}">Continue to Step {{ procurement.current_step|add:1 }}</a>
+    <a href="{% url 'continue_step' procurement.id procurement.current_step|add:1 %}">Continue to {{ procurement.current_step|add:1 }}</a>
 </body>
 </html>

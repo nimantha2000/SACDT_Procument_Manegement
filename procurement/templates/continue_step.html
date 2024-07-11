@@ -1,14 +1,20 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
 <head>
     <title>Continue Step</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
 </head>
 <body>
     <h1>Continue Step {{ step }} for {{ procurement.name }}</h1>
     <form method="post" enctype="multipart/form-data">
         {% csrf_token %}
+        <label for="name">Step Name:</label>
+        <input type="text" name="name" id="name" required><br>
+        <br>
         <label for="file">Upload File:</label>
         <input type="file" name="file" id="file" required><br>
+        <br>
         <button type="submit">Continue</button>
     </form>
 </body>
