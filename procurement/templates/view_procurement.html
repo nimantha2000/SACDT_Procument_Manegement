@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>View Procurement</title>
+</head>
+<body>
+    <h1>{{ procurement.name }}</h1>
+    <p>{{ procurement.description }}</p>
+    <h2>Steps</h2>
+    <ul>
+        {% for step in steps %}
+        <li>Step {{ step.step_number }}: <a href="{{ step.file.url }}">Download</a></li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'continue_step' procurement.id procurement.current_step|add:1 %}">Continue to Step {{ procurement.current_step|add:1 }}</a>
+</body>
+</html>

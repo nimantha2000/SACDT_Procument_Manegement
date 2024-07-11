@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Dashboard</title>
+</head>
+<body>
+    <h1>User Dashboard</h1>
+    <h2>All Procurements</h2>
+    <ul>
+        {% for procurement in procurements %}
+        <li>
+            {{ procurement.name }} (Current Step: {{ procurement.current_step }})
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

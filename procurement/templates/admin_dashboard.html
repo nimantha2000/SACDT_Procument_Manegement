@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Dashboard</title>
+</head>
+<body>
+    <h1>Admin Dashboard</h1>
+    <a href="{% url 'create_procurement' %}">Create Procurement</a>
+    <h2>All Procurements</h2>
+    <ul>
+        {% for procurement in procurements %}
+        <li>
+            <a href="{% url 'view_procurement' procurement.id %}">{{ procurement.name }}</a>
+            (Current Step: {{ procurement.current_step }})
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
