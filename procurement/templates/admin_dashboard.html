@@ -13,7 +13,7 @@
     <ul>
         {% for procurement in procurements %}
         <li>
-            {{ procurement.name }} (Current Step: {{ procurement.current_step }})
+            {{ procurement.name }} (Current Step: {{ procurement.current_step }} )
             <br>
             <br>
             <button><a href="{% url 'view_procurement' procurement.id %}">View</a></button>

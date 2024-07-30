@@ -36,7 +36,8 @@
     <ul>
         {% for procurement in procurements %}
         <li>
-            {{ procurement.name }} (Current Step: {{ procurement.current_step }})
+            {{ procurement.name }} (Current Step: {{ procurement.current_step }}) 
+            <br>(Current Step: {{ step.name }})
         </li>
         {% endfor %}
     </ul>
